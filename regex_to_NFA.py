@@ -202,7 +202,7 @@ def clean_accept_states(nfa):
 # Convert regex to postfix so that it can be read by stack
 def to_postfix(regex):
     # Initate priority so that postfix is done correctly
-    precedence = {'.': 1, 'U': 2, '*': 3, '+': 3}
+    precedence = {'U': 1, '.': 2, '*': 3, '+': 3}
     output = []
     stack = []
     i = 0
@@ -242,7 +242,7 @@ def to_postfix(regex):
 def parse_regex(regex):
     # Convert regex to postfix for stack reading
     postfix = to_postfix(regex)
-    
+    print(postfix)
     # Parse postfix to NFA
     stack = []
     # Iterate through postfix
